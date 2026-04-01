@@ -1,9 +1,7 @@
 <?php
-// Include semua class
 require_once 'TransferBank.php';
 require_once 'EWallet.php';
 require_once 'QRIS.php';
-// Include class tambahan dari Tugas 1
 require_once 'COD.php';
 require_once 'VirtualAccount.php';
 ?>
@@ -41,7 +39,7 @@ require_once 'VirtualAccount.php';
         
         $objek = null;
 
-        // Instansiasi berdasarkan pilihan dropdown
+        // pilihan dropdown
         if ($metode == 'TransferBank') {
             $objek = new TransferBank($jumlah);
         } elseif ($metode == 'EWallet') {
@@ -54,7 +52,7 @@ require_once 'VirtualAccount.php';
             $objek = new VirtualAccount($jumlah);
         }
 
-        // Output Pemrosesan (Menggantikan baris echo di halaman 16 PDF)
+        // Output Pemrosesan
         if ($objek != null) {
             echo "<b>Proses:</b> " . $objek->prosesPembayaran() . "<br>";
             
